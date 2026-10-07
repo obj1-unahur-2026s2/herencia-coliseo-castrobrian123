@@ -103,4 +103,25 @@ class contundente inherits Arma {
 
 
 }
+
+class casco {
+    method armadura() = 10
+}
+
+class escudo{
+    method armadura(gladiador) = 5 + gladiador.destreza()
+}
+
+class Gladiador {
+    var vida = 100
+
+    //method atacar()
+    //method defenderse()
+}
+
+class Mirmillon inherits Gladiador{
+    var arma
+
+    var armadura
+}
 */
