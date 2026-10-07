@@ -2,6 +2,16 @@ object coliseo {
     //espada, daga, hacha //esta son armas
     //casco, escudo //esta son las armaduras
 
+    var property guerreros = []
+
+    method agregarGladiador(unGladiador){
+        guerreros.add(unGladiador)
+    }
+
+    method quitarGladiador(unGladiador){
+        guerreros.remove(unGladiador)
+    }
+
     /*
     method comenzarPelea(){
 
@@ -28,7 +38,7 @@ class Gladiador {
 
 }
 
-class Mirmillon inherits Gladiador(vida = 100, destreza = 15) {
+class Mirmillon inherits Gladiador(vida = 100, fuerza = 0, destreza = 15) {
 
     var property arma
 
@@ -50,13 +60,9 @@ class Mirmillon inherits Gladiador(vida = 100, destreza = 15) {
         armadura = nuevaArmadura
     }
 
-    // los gladiadores no puede usar mas de 2 armas en mano
-
-
-
 }
 
-class Dimachaeru inherits Gladiador(vida = 100, fuerza = 10) {
+class Dimachaeru inherits Gladiador(vida = 100, fuerza = 10, destreza = 0) {
 
     var property arma = []
 
@@ -68,26 +74,33 @@ class Dimachaeru inherits Gladiador(vida = 100, fuerza = 10) {
         arma.remove(unArma)
     }
 
-    // los gladiadores no puede usar mas de 2 armas en mano
-
 }
 
 /*
+//version del profe
 
 
+class Arma {
+    method valorDeAtaque()
+}
 
-*/
+class ArmaDeFilo inherits Arma {
 
-/*
+    const filo //un valor entre 0 y 1
 
-    var property armamento = []
+    const longitud
 
-    method agregarParteDeArmadura(unaParteDeArmadura){
-        armamento.add(unaParteDeArmadura)
-    }
+    override method valorDeAtaque() = filo * longitud //todas las armas llevan valorDeAtaque()
 
-    method EliminarParteDeArmadura(unaParteDeArmadura){
-        armamento.remove(unaParteDeArmadura)
-    }
+}
 
+
+class contundente inherits Arma {
+
+    const peso
+
+    override method valorDeAtaque() = peso //todas las armas llevan valorDeAtaque()
+
+
+}
 */
