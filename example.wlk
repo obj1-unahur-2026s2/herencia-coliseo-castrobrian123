@@ -40,6 +40,22 @@ class Mirmillon inherits Gladiador(vida = 100, fuerza = 0, destreza = 15) {
 
     method longitudDeArmaDeFilo() = self.arma().between(0,1)
 
+    method cambiarFuerza(nuevaFuerza){
+        fuerza = nuevaFuerza
+    }
+
+    var property armadura
+
+    method cambiarArmadura(nuevaArmadura){
+        armadura = nuevaArmadura
+    }
+
+
+
+
+
+
+
 
 
 
@@ -71,6 +87,20 @@ class Dimachaeru inherits Gladiador {
 
     method eliminarArma(unArma){
         armamento.remove(unArma)
+    }
+
+*/
+
+/*
+
+    var property armamento = []
+
+    method agregarParteDeArmadura(unaParteDeArmadura){
+        armamento.add(unaParteDeArmadura)
+    }
+
+    method EliminarParteDeArmadura(unaParteDeArmadura){
+        armamento.remove(unaParteDeArmadura)
     }
 
 */
