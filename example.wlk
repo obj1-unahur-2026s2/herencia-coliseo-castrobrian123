@@ -115,13 +115,49 @@ class escudo{
 class Gladiador {
     var vida = 100
 
-    //method atacar()
-    //method defenderse()
+    method atacar(atacado){
+        atacado.recibirDaño(self)
+    }
+
+    method recibirDaño(atacante){
+        vida = vida - (atacante.poderDeAtaque() - self.defensa())
+    }
+
+
+    method defenderse()
 }
 
 class Mirmillon inherits Gladiador{
     var arma
 
     var armadura
+
+    var fuerza //el profesor comenta que al aplicar property ademas puedes ingresarle datos por parametros
+
+    method fuerza(valor){ fuerza = valor}
+
+    method destreza() = 15
+
+    method cambiarArmadura(otraArmadura){ armadura = otraArmadura}
+
+    method poderDeAtaque() = fuerza + arma.valorDeAtaque()
+}
+
+class Dimachaeru inherits Gladiador{
+
+    const armas =[]
+
+    const destreza
+
+    override method atacar(atacado){
+
+    }
+
+    method fuerza() = 10
+
+    method poderDeAtaque() = self.fuerza() + armas.sum({a => a.valorDeAtaque()})
+
+    //ejercicio sin terminar
+
 }
 */
