@@ -28,7 +28,7 @@ class Gladiador {
 
 }
 
-class Mirmillon inherits Gladiador(vida = 100, fuerza = 0, destreza = 15) {
+class Mirmillon inherits Gladiador(vida = 100, destreza = 15) {
 
     var property arma
 
@@ -38,7 +38,7 @@ class Mirmillon inherits Gladiador(vida = 100, fuerza = 0, destreza = 15) {
 
     method filoDeArma() = self.arma().filo()
 
-    method longitudDeArmaDeFilo() = self.arma().between(0,1)
+    method longitudDeArmaDeFilo() = (self.arma()).min(1)
 
     method cambiarFuerza(nuevaFuerza){
         fuerza = nuevaFuerza
@@ -50,30 +50,23 @@ class Mirmillon inherits Gladiador(vida = 100, fuerza = 0, destreza = 15) {
         armadura = nuevaArmadura
     }
 
-
-
-
-
-
-
-
-
-
     // los gladiadores no puede usar mas de 2 armas en mano
 
 
 
 }
 
-class Dimachaeru inherits Gladiador {
+class Dimachaeru inherits Gladiador(vida = 100, fuerza = 10) {
 
-    //var property armamento = []
+    var property arma = []
 
-    //method filoDel_(unArma) = unArma.filo()
+    method agregarArma(unArma){
+        arma.add(unArma)
+    }
 
-    //method longitudDeArmaDeFilo(unArma) = unArma.between(0,1)
-
-    //method sonBrutos() = armamento.contains([mazo,martillo])
+    method eliminarArma(unArma){
+        arma.remove(unArma)
+    }
 
     // los gladiadores no puede usar mas de 2 armas en mano
 
@@ -81,13 +74,7 @@ class Dimachaeru inherits Gladiador {
 
 /*
 
-    method agregarArma(unArma){
-        armamento.add(unArma)
-    }
 
-    method eliminarArma(unArma){
-        armamento.remove(unArma)
-    }
 
 */
 
